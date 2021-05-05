@@ -1,0 +1,1 @@
+export { getPlanets } from './getPlanets';
