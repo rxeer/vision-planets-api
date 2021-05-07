@@ -1,1 +1,1 @@
-export type { IPlanet, IPlanetsResponse } from './IPlanet';
+export type { IPlanet, IPlanetsResponse, IPlanetByIdReponse } from './IPlanet';

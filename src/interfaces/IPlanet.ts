@@ -25,6 +25,10 @@ export interface IPlanet {
   properties: IPlanetProperties;
 }
 
+export interface IPlanetByIdReponse extends IPlanetFields {
+  id: number;
+}
+
 export interface IPlanetsResponse {
   items: IPlanet[];
   totalCount: number;

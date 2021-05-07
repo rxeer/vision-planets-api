@@ -1,9 +1,16 @@
 import bridge from './bridge';
-import { IPlanet } from '../interfaces';
+import { IPlanetByIdReponse, IPlanet } from '../interfaces';
 
-export const getPlanetById = async (planetId: number): Promise<IPlanet> => {
-  return await bridge.api.getContentItem({
+export const getPlanetById = async (
+  planetId: number
+): Promise<IPlanetByIdReponse> => {
+  const { fields, contentID }: IPlanet = await bridge.api.getContentItem({
     contentID: planetId,
     languageCode: 'en-us',
   });
+
+  return {
+    ...fields,
+    id: contentID,
+  };
 };
