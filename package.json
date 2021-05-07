@@ -26,6 +26,7 @@
   "homepage": "https://github.com/rxeer/vision-planets-api#readme",
   "dependencies": {
     "@agility/content-fetch": "^1.1.1",
+    "@airbrake/node": "^2.1.4",
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.0.0",
     "@types/node": "^15.0.2",

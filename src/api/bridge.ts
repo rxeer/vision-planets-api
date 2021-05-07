@@ -9,8 +9,8 @@ class BridgeApi {
 
   public init() {
     const api = agility.getApi({
-      guid: process.env.NODE_AGILITY_GUID,
-      apiKey: process.env.NODE_AGILITY_API_KEY,
+      guid: process.env.AGILITY_GUID,
+      apiKey: process.env.AGILITY_API_KEY,
     });
 
     this.api = api;

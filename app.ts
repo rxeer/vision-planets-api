@@ -6,6 +6,7 @@ import * as cors from '@koa/cors';
 import * as Router from '@koa/router';
 import * as logger from 'koa-pino-logger';
 import * as compress from 'koa-compress';
+import { Notifier } from '@airbrake/node';
 import * as koaBody from 'koa-body';
 import * as koa404Handler from 'koa-404-handler';
 import * as errorHandler from 'koa-better-error-handler';
@@ -15,6 +16,12 @@ import { initPlanetsRoutes } from './src/routes';
 const app = new Koa();
 const router = new Router({
   prefix: '/api/v1',
+});
+
+new Notifier({
+  projectId: Number(process.env.AIRBRAKE_PROJECT_ID),
+  projectKey: process.env.AIRBRAKE_PROJECT_KEY,
+  environment: 'production'
 });
 
 app.context.onerror = errorHandler;
