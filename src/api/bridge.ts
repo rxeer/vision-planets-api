@@ -1,4 +1,4 @@
-const agility = require('@agility/content-fetch');
+import * as agility from '@agility/content-fetch';
 
 class BridgeApi {
   constructor() {
@@ -9,9 +9,8 @@ class BridgeApi {
 
   public init() {
     const api = agility.getApi({
-      guid: '2e777843-u',
-      apiKey:
-        'defaultlive.8ec008f2fa6c1648b7d5c928cb8845abe7a0d743ef127b7d78e7500ec9ed74a3',
+      guid: process.env.NODE_AGILITY_GUID,
+      apiKey: process.env.NODE_AGILITY_API_KEY,
     });
 
     this.api = api;
