@@ -1,0 +1,1 @@
+export { initPlanetsRoutes } from './planetsRoutes';
